@@ -44,13 +44,23 @@ module.exports = class SpeedCurve {
    * @param {Number} days: Number of days of tests (Max: 365).
    * @returns {Promise} promise
    */
-  getUrls(urlId, browser, days) {
+  getUrl(urlId, browser, days) {
     let queries = querystring.stringify({
       browser : browser || 'chrome',
       days    : days || 14
     });
     let options = Object.assign({}, this.options);
     return request.get(`${API_ENDPOINT}/urls/${urlId}?${queries}`, options);
+  }
+
+  /**
+   * Retrieves the metadata for all URLs across your sites. 
+   * @description GET https://api.speedcurve.com/v1/urls
+   * @returns {Promise} promise
+   */
+  getUrls() {
+    let options = Object.assign({}, this.options);
+    return request.get(`${API_ENDPOINT}/urls`, options);
   }
 
   /**

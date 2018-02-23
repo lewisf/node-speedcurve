@@ -1,6 +1,6 @@
 {
   "name": "@lewisf/speedcurve",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "SpeedCurve API thin wrapper",
   "scripts": {
     "lint": "eslint index.js",
@@ -13,11 +13,7 @@
     "url": "https://github.com/1000ch/node-speedcurve/issues"
   },
   "homepage": "https://github.com/1000ch/node-speedcurve#readme",
-  "keywords": [
-    "speedcurve",
-    "performance",
-    "api"
-  ],
+  "keywords": ["speedcurve", "performance", "api"],
   "dependencies": {
     "got": "^6.3.0"
   },
