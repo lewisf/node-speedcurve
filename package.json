@@ -1,5 +1,5 @@
 {
-  "name": "speedcurve",
+  "name": "@lewis/speedcurve",
   "version": "0.3.1",
   "description": "SpeedCurve API thin wrapper",
   "scripts": {
