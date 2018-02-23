@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 
-const querystring = require('querystring');
-const request = require('got');
-const API_ENDPOINT = 'https://api.speedcurve.com/v1';
+const querystring = require("querystring");
+const request = require("got");
+const API_ENDPOINT = "https://api.speedcurve.com/v1";
 
 module.exports = class SpeedCurve {
   /**
@@ -10,12 +10,12 @@ module.exports = class SpeedCurve {
    * @param {String} apiKey: Your API key is available on the Admin > Teams page.
    */
   constructor(apiKey) {
-    let authorization = new Buffer(`${apiKey}:x`).toString('base64');
+    let authorization = new Buffer(`${apiKey}:x`).toString("base64");
     this.options = {
-      json    : true,
-      headers : {
-        authorization     : `Basic ${authorization}`,
-        'accept-encoding' : 'gzip,deflate'
+      json: true,
+      headers: {
+        authorization: `Basic ${authorization}`,
+        "accept-encoding": "gzip,deflate"
       }
     };
   }
@@ -29,8 +29,8 @@ module.exports = class SpeedCurve {
    */
   getSites(format, days) {
     let queries = querystring.stringify({
-      format : format || 'speedcurve',
-      days   : days || 14
+      format: format || "speedcurve",
+      days: days || 14
     });
     let options = Object.assign({}, this.options);
     return request.get(`${API_ENDPOINT}/sites?${queries}`, options);
@@ -46,8 +46,8 @@ module.exports = class SpeedCurve {
    */
   getUrls(urlId, browser, days) {
     let queries = querystring.stringify({
-      browser : browser || 'chrome',
-      days    : days || 14
+      browser: browser || "chrome",
+      days: days || 14
     });
     let options = Object.assign({}, this.options);
     return request.get(`${API_ENDPOINT}/urls/${urlId}?${queries}`, options);
@@ -72,6 +72,16 @@ module.exports = class SpeedCurve {
   getNotes() {
     let options = Object.assign({}, this.options);
     return request.get(`${API_ENDPOINT}/notes`, options);
+  }
+
+  /**
+   * Add a note to one of the sites within your account/team.
+   * @description POST https://api.speedcurve.com/v1/notes
+   * @returns {Promise} promise
+   */
+  addNote() {
+    let options = Object.assign({}, this.options);
+    return request.post(`${API_ENDPOINT}/notes`, options);
   }
 
   /**
