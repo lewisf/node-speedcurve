@@ -1,6 +1,6 @@
 {
   "name": "@lewisf/speedcurve",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "SpeedCurve API thin wrapper",
   "scripts": {
     "lint": "eslint index.js",
@@ -13,7 +13,11 @@
     "url": "https://github.com/1000ch/node-speedcurve/issues"
   },
   "homepage": "https://github.com/1000ch/node-speedcurve#readme",
-  "keywords": ["speedcurve", "performance", "api"],
+  "keywords": [
+    "speedcurve",
+    "performance",
+    "api"
+  ],
   "dependencies": {
     "got": "^6.3.0"
   },
@@ -25,7 +29,9 @@
   "eslintConfig": {
     "extends": "@1000ch",
     "rules": {
-      "camelcase": [0]
+      "camelcase": [
+        0
+      ]
     }
   }
 }

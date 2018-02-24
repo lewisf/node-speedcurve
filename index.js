@@ -54,7 +54,7 @@ module.exports = class SpeedCurve {
   }
 
   /**
-   * Retrieves the metadata for all URLs across your sites. 
+   * Retrieves the metadata for all URLs across your sites.
    * @description GET https://api.speedcurve.com/v1/urls
    * @returns {Promise} promise
    */
@@ -131,7 +131,7 @@ module.exports = class SpeedCurve {
         detail  : detail
       }
     });
-    return request.post(`${API_ENDPOINT}/notes`, options);
+    return request.post(`${API_ENDPOINT}/deploys`, options);
   }
 
   /**
